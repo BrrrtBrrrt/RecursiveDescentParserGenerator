@@ -1,0 +1,7 @@
+﻿<expr> ::= <factor> <expr-D>
+<expr-D> ::= '+' <factor> <expr-D> | E
+<factor> ::= <number> <factor-D>
+<factor-D> ::= '*' <number> <factor-D> | E
+<number> ::= <digit> <number-D>
+<number-D> ::= '0' <number-D> | '1' <number-D> | '2' <number-D> | '3' <number-D> | '4' <number-D> | '5' <number-D> | '6' <number-D> | '7' <number-D> | '8' <number-D> | '9' <number-D> | E
+<digit> ::= '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9'

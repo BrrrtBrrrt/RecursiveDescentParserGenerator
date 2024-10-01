@@ -1,0 +1,21 @@
+<bnf> ::= <rules>
+<rules> ::= <rule> <rules2>
+<rules2> ::= <lineEnd> <rule> <rules2> | E
+<rule> ::= <whiteSpaceOptional> "<" <ruleName> ">" <whiteSpaceOptional> "::=" <whiteSpaceOptional> <ruleOptions> <whiteSpaceOptional>
+<whiteSpaceOptional> ::= " " <whiteSpaceOptional> | E
+<ruleName> ::= <letter> <ruleName2> | <digit> <ruleName2>
+<ruleName2> ::= <ruleName> | "-" <ruleName2> | "_" <ruleName2> | E
+<ruleOptions> ::= <ruleOption> <ruleOptions2>
+<ruleOptions2> ::= <whiteSpaceOptional> "|" <whiteSpaceOptional> <ruleOption> <ruleOptions2> | E
+<ruleOption> ::= <tokens> | "E"
+<tokens> ::= <token> <tokens2>
+<tokens2> ::= <whiteSpaceOptional> <token> <tokens2> | E
+<token> ::= "<" <ruleName> ">" | '"' <textNoDoubleQuote> '"' | "'" <textNoSingleQuote> "'"
+<textNoSingleQuote> ::= <letter> <textNoSingleQuote2> | <digit> <textNoSingleQuote2> | <symbol> <textNoSingleQuote2> | '"' <textNoSingleQuote2>
+<textNoSingleQuote2> ::= <letter> <textNoSingleQuote2> | <digit> <textNoSingleQuote2> | <symbol> <textNoSingleQuote2> | '"' <textNoSingleQuote2> | E
+<textNoDoubleQuote> ::= <letter> <textNoDoubleQuote2> | <digit> <textNoDoubleQuote2> | <symbol> <textNoDoubleQuote2> | "'" <textNoDoubleQuote2>
+<textNoDoubleQuote2> ::= <letter> <textNoDoubleQuote2> | <digit> <textNoDoubleQuote2> | <symbol> <textNoDoubleQuote2> | "'" <textNoDoubleQuote2> | E
+<lineEnd> ::= "\r\n" | "\n"
+<letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "ä" | "ö" | "ü" | "ß"
+<digit> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<symbol> ::= "!" | "§" | "$" | "%" | "&" | "/" | "(" | ")" | "=" | "?" | "`" | "´" | "²" | "³" | "{" | "}" | " " | "[" | "]" | "\" | "@" | "€" | "~" | "*" | "+" | "#" | "-" | "_" | "." | ":" | "," | ";" | "<" | ">" | "|" | "\t" | "\n" | "\r"

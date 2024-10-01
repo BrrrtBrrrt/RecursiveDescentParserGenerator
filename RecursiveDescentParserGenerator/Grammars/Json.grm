@@ -1,0 +1,27 @@
+<json> ::= <jsonObject>
+<jsonObject> ::= <spaceOptional><null><spaceOptional> | <spaceOptional><boolean><spaceOptional> | <spaceOptional><string><spaceOptional> | <spaceOptional><number><spaceOptional> | <spaceOptional><array><spaceOptional> | <spaceOptional><object><spaceOptional>
+<null> ::= "null"
+<boolean> ::= "true" | "false"
+<string> ::= '"' <textNoDoubleQuote> '"'
+<number> ::= <integer> | <float>
+<integer> ::= <digitWithoutZero> <integer2> | "-" <digitWithoutZero> <integer2>
+<integer2> ::= <digit> <integer2> | E
+<float> ::= "0." <floatDecimalPart> | "-0." <floatDecimalPart> | "-" <integer> "." <floatDecimalPart>
+<floatDecimalPart> ::= <digit> <integer2>
+<array> ::= "[" <spaceOptional> <arrayElements> <spaceOptional> "]"
+<arrayElements> ::= <spaceOptional> <jsonObject> <spaceOptional> <arrayElements2> | E
+<arrayElements2> ::= <spaceOptional> "," <spaceOptional> <jsonObject> <spaceOptional> <arrayElements2> | E
+<object> ::= "{" <spaceOptional> <objectFields> <spaceOptional> "}"
+<objectFields> ::= <spaceOptional> <key> <spaceOptional> ":" <spaceOptional> <jsonObject> <spaceOptional> <objectFields2> | E
+<objectFields2> ::= <spaceOptional> "," <spaceOptional> <key> <spaceOptional> ":" <spaceOptional> <jsonObject> <spaceOptional> <objectFields2> | E
+<key> ::= <string> | <number>
+<spaceOptional> ::= <whiteSpace> <spaceOptional> | <lineEnd> <spaceOptional> | <tabulator> <spaceOptional> | E
+<whiteSpace> ::= " "
+<lineEnd> ::= "\r\n" | "\n"
+<tabulator> ::= "\t"
+<textNoDoubleQuote> ::= <letter> <textNoDoubleQuote2> | <digit> <textNoDoubleQuote2> | <symbol> <textNoDoubleQuote2> | "'" <textNoDoubleQuote2> | '\"' <textNoDoubleQuote2>
+<textNoDoubleQuote2> ::= <letter> <textNoDoubleQuote2> | <digit> <textNoDoubleQuote2> | <symbol> <textNoDoubleQuote2> | "'" <textNoDoubleQuote2> | E
+<letter> ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "ä" | "ö" | "ü" | "ß"
+<digitWithoutZero> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<digit> ::= "0" | <digitWithoutZero>
+<symbol> ::= "!" | "§" | "$" | "%" | "&" | "/" | "(" | ")" | "=" | "?" | "`" | "´" | "²" | "³" | "{" | "}" | " " | "[" | "]" | "\" | "@" | "€" | "~" | "*" | "+" | "#" | "-" | "_" | "." | ":" | "," | ";" | "<" | ">" | "|" | "\t" | "\n" | "\r"

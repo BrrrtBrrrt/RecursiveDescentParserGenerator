@@ -1,0 +1,13 @@
+<arithmetic> ::= <expression>
+<expression> ::= <addition> | <subtraction> | <multiplication> | <division> | <number> | "(" <expression> ")"
+<addition> ::= "+(" <expression> "," <expression> ")"
+<subtraction> ::= "-(" <expression> "," <expression> ")"
+<multiplication> ::= "*(" <expression> "," <expression> ")"
+<division> ::= "/(" <expression> "," <expression> ")"
+<number> ::= <float> | <integer>
+<integer> ::= <digitWithoutZero> <integer2> | "-" <digitWithoutZero> <integer2>
+<integer2> ::= <digit> <integer2> | E
+<float> ::= "0." <floatDecimalPart> | "-0." <floatDecimalPart> | "-" <integer> "." <floatDecimalPart> | <integer> "." <floatDecimalPart>
+<floatDecimalPart> ::= <digit> <integer2>
+<digitWithoutZero> ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+<digit> ::= "0" | <digitWithoutZero>
