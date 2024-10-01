@@ -11,4 +11,4 @@ Generates a parser (.cs File) for a grammar, includes a visualizization of the g
 Initial release
 
 ## Preview
-![image](https://github.com/user-attachments/assets/7af73617-cb46-4c09-82d0-139a95bc6e01)
+![image](https://github.com/user-attachments/assets/508d2d5a-fcf1-46a1-95ce-83ed242dec1d)
