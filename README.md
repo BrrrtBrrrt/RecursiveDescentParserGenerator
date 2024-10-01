@@ -8,7 +8,7 @@ Generates a parser (.cs File) for a grammar, includes a visualizization of the g
 - Generates recursive descent parsers
 
 ## Status
-Initial release
+Working prototype
 
 ## Preview
 ![image](https://github.com/user-attachments/assets/508d2d5a-fcf1-46a1-95ce-83ed242dec1d)
